@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="" indicator-dots="true" indicator-color="rgba(0,0,0,.3)" 
+  indicator-active-color="rgba(255,102,102,1)"
+  autoplay="true" 
+  circular="true" interval="5000" duration="1000">
+    <swiper-item wx:for="{{bannerList}}"
+    wx:key="bannerId"
+    class="swiperItem">
+      <image src="{{item.pic}}" mode="widthFix"/>
+    </swiper-item>
+  </swiper>
+  <!-- 导航栏 -->
+  <view class="nav">
+    <view class="navItem">
+      
+    </view>
+  </view>
+  
+    
+  
+    
+    
+    
+</view>

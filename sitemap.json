@@ -1,0 +1,7 @@
+{
+  "desc":"仅供学习使用",
+  "rules": [{
+  "action": "allow",
+  "page": "*"
+  }]
+}

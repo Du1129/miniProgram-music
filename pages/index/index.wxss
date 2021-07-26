@@ -1,0 +1,13 @@
+.container{
+    padding:8px;
+}
+.swiperItem{
+    /* box-sizing: border-box;
+    padding:8px 8px; */
+    border-radius: 8px;
+}
+.swiperItem image{
+    width:100%;
+    border-radius: 8px;
+
+}
