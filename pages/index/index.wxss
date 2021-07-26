@@ -11,3 +11,27 @@
     border-radius: 16rpx;
 
 }
+.navItem{
+    
+}
+.imgBox{
+    border-radius: 50%;
+    width:100rpx;
+    height:100rpx;
+    background-color:#fff1f1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.imgBox .navImg{
+
+    width:100rpx;
+    height:100rpx;
+    position:relative;
+    left:-100rpx;
+    filter: drop-shadow(100rpx 0px 0 red);
+
+    
+    /* border-radius: 50%; */
+}

@@ -15,3 +15,7 @@ export const reqBannerData = () => {
         url:"/banner?type=2"
     })
 }
+//获取首页导航栏图标
+export const reqHomeNavIcon = () => {
+    return request({url:"/homepage/dragon/ball"})
+}

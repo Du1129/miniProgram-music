@@ -13,7 +13,10 @@
   <!-- 导航栏 -->
   <view class="nav">
     <view class="navItem">
-      
+      <view class="imgBox">
+        <image class="navImg" src="http://p1.music.126.net/uG5p6CnwAHrLqOkaSeRlnA==/109951163986649164.jpg"/>
+      </view>
+      <text>每日推荐</text>
     </view>
   </view>
   
