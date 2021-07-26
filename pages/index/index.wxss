@@ -12,7 +12,15 @@
 
 }
 .navItem{
-    
+    width:100rpx;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navItem text{
+    font-size: 25rpx;
+    margin-top: 10rpx;
 }
 .imgBox{
     border-radius: 50%;
