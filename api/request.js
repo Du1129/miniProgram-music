@@ -8,16 +8,16 @@ export const request = ({url,data={},method='get'}) => {
     return new Promise((resolve,reject) => {
         wx.request({
             url: BASEURL+url,
-          data,
-          method,
-          success(res){
-              resolve(res.data);
-              wx.hideLoading()
-            },
-            fail(err){
-                reject(err);
+            data,
+            method,
+            success(res){
+                resolve(res.data);
                 wx.hideLoading()
-            }
+                },
+                fail(err){
+                    reject(err);
+                    wx.hideLoading()
+                }
+            })
         })
-    })
 }
