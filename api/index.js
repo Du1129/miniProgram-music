@@ -31,3 +31,10 @@ export const reqTopListDetail = (id) => {
         url:`/playlist/detail?id=${id}`
     })
 }
+
+export const reqRecentRecord = (data) => {
+    return request({
+        url:"/user/record",
+        data
+    })
+}
