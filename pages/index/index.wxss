@@ -1,5 +1,9 @@
 .container{
-    padding:16rpx;
+    background-color: #f5f5f5;
+}
+.topContent{
+    background-color: #fff;
+    padding:24rpx 24rpx 20rpx;
 }
 .swiperItem{
     /* box-sizing: border-box;
@@ -61,7 +65,12 @@
 
 /*推荐歌单*/
 .recommandList{
-    margin-top:24rpx;
+    padding:24rpx 24rpx;
+    background-color: #fff;
+    border-top:1px solid #f9f9f9;
+    border-bottom-left-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+    /* margin-top:24rpx; */
 }
 .recommandListDetail{
     white-space: nowrap;
@@ -103,4 +112,70 @@
     word-break:break-all;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
+}
+/*排行榜相关*/
+.topListContainer{
+    background-color:#fff;
+    border-radius: 20rpx;
+    margin-top:24rpx;
+    padding:24rpx;
+}
+.topListSwiper{
+    height:500rpx;
+}
+.topListItem{
+    padding-right:50rpx;
+    box-sizing: border-box;
+}
+.topListDetail{
+    border:1px solid #f5f5f5;
+    border-radius:16rpx;
+    padding:0 16rpx;
+    /* box-shadow: 0 2px 12px 0 rgba(20, 20, 20, 0.1) */
+    box-shadow:0 2px 12px 0 #f9f9f9;
+}
+.topListTitle{
+    margin:24rpx 0;
+    font-size:30rpx;
+    font-weight:bold;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.topListTitle image{
+    width:30rpx;
+}
+.topListSongs .songItem{
+    margin-bottom:14rpx;
+    display:flex;
+    align-items:center;
+}
+.topListSongs .songItem image{
+    width:100rpx;
+    border-radius:12rpx;
+}
+.songItem .songIndex{
+    margin:0 16rpx;
+}
+.songItem .songName{
+    max-width:220rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+.songItem .songAr{
+    font-size:20rpx;
+    color:#b3b3b3;
+    flex:1;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
 }
