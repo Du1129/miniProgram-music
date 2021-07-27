@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs module="util" src="../../utils/util.wxs"></wxs>
 <view class="container">
   <swiper class="" indicator-dots="true" indicator-color="rgba(0,0,0,.3)" 
   indicator-active-color="rgba(255,102,102,1)"
@@ -7,17 +8,34 @@
     <swiper-item wx:for="{{bannerList}}"
     wx:key="bannerId"
     class="swiperItem">
-      <image src="{{item.pic}}" mode="widthFix"/>
+      <image class="swiperImg" src="{{item.pic}}" mode="widthFix">
+        <text class="swiperText" style="background-color:{{item.titleColor}}">
+          {{item.typeTitle}}
+        </text>
+      </image>
     </swiper-item>
   </swiper>
   <!-- 导航栏 -->
-  <view class="nav">
-    <view class="navItem">
-      <view class="imgBox">
-        <image class="navImg" src="http://p1.music.126.net/uG5p6CnwAHrLqOkaSeRlnA==/109951163986649164.jpg"/>
+  <scroll-view class="nav" scroll-x="true" enable-flex="true">
+      <view class="navItem" wx:for="{{navIconList}}" wx:key="id">
+        <image class="navImg" src="{{item.iconUrl}}"/>
+        <text>{{item.name}}</text>
       </view>
-      <text>每日推荐</text>
-    </view>
+  </scroll-view>
+
+  <!--推荐歌单-->
+  <view class="recommandList">
+    <NavHeader title="推荐歌单"></NavHeader>
+    <scroll-view class="recommandListDetail" scroll-x="true" enable-flex="true">
+      <view class="recommandItem" wx:for="{{recommandList}}" wx:key="id">
+        <image src="{{item.picUrl}}" mode="widthFix">
+          <view class="playCount">
+            <image src="../../static/images/bofang.png" mode="widthFix"/><text>{{util.formatCount(item.playCount)}}</text>
+          </view>
+        </image>
+        <view class="name">{{item.name}}</view>
+      </view>
+    </scroll-view>
   </view>
   
     

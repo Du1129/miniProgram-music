@@ -6,15 +6,33 @@
     padding:8px 8px; */
     border-radius: 16rpx;
 }
-.swiperItem image{
+.swiperImg{
     width:100%;
     border-radius: 16rpx;
+    position: relative;
 
+}
+.swiperText{
+    line-height:14rpx;
+    padding:0 10rpx 10rpx;
+    color:#fff;
+    position: absolute;
+    right:0;
+    bottom:0;
+    font-size:20rpx;
+    border-top-left-radius: 16rpx;
+}
+.nav{
+    margin-top:16rpx;
+    white-space: nowrap;
+    margin-bottom:14rpx;
+    /* border-bottom:1px solid rgba(10,10,10,.2) */
 }
 .navItem{
     width:100rpx;
+    margin-right:30rpx;
     text-align: center;
-    display:flex;
+    display:inline-flex;
     flex-direction: column;
     align-items: center;
 }
@@ -27,19 +45,62 @@
     width:100rpx;
     height:100rpx;
     background-color:#fff1f1;
-    display:flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
-.imgBox .navImg{
+.navImg{
 
     width:100rpx;
     height:100rpx;
-    position:relative;
+    /* position:relative;
     left:-100rpx;
-    filter: drop-shadow(100rpx 0px 0 red);
+    filter: drop-shadow(100rpx 0rpx 0 #fe3b3b); */
 
-    
-    /* border-radius: 50%; */
+    border-radius: 50%;
+    background-color:#fe3b3b;
+}
+
+/*推荐歌单*/
+.recommandList{
+    margin-top:24rpx;
+}
+.recommandListDetail{
+    white-space: nowrap;
+}
+.recommandItem{
+    display: inline-block;
+    width:28%;
+    margin-right:20rpx;
+}
+.recommandItem image{
+    width:100%;
+    border-radius: 20rpx;
+    position: relative;
+}
+.recommandItem .playCount{
+    position:absolute;
+    right:8rpx;
+    top:8rpx;
+    font-size:26rpx;
+    color:#fff;
+    height:34rpx;
+    padding:0 16rpx;
+    background-color:rgba(20,20,20,.3);
+    border-radius:17rpx;
+    display: flex;
+    align-items: center;
+}
+.playCount image{
+    width:28rpx;
+}
+.recommandItem .name{
+    font-size: 28rpx;
+    line-height: 30rpx;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: -o-ellipsis-lastline;
+    /* text-overflow:ellipsis; */
+    display: -webkit-box;
+    word-break:break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
 }
