@@ -1,0 +1,9 @@
+<!--components/navHeader.wxml-->
+<view class="headerContainer">
+    <view class="left-H">
+    {{title}}
+    </view>
+    <view class="right-H">
+        更多 >
+    </view>
+</view>

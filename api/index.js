@@ -19,3 +19,9 @@ export const reqBannerData = () => {
 export const reqHomeNavIcon = () => {
     return request({url:"/homepage/dragon/ball"})
 }
+//获取首页推荐歌单
+export const reqHomeRecommandList = (limit) => {
+    return request({url:"/personalized",data:{
+        limit
+    }})
+}
