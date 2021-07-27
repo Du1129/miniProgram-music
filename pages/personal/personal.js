@@ -29,7 +29,6 @@ Page({
       coverTransition:''
     })
 
-
   },
   handleTouchMove(event){
     moveY = event.touches[0].clientY;
