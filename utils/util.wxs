@@ -24,10 +24,31 @@ var formatCount = function (count) {
     count = Math.ceil(count/100000000)
     return count+"亿"
   }
+}
+var formatSinger = function(ar){
+  var name = "";
+  for(var i=0;i<ar.length;i++){
+    if(i !== ar.length-1){
+      name = name+ar[i].name+"/"
+    }else{
+      name = name+ar[i].name
+    }
+  }
+  return name;
+}
+var formatReason = function (id,reasonArr){
+  for(var i=0;i<reasonArr.length;i++){
+    if(reasonArr[i].songId === id){
+      return reasonArr[i].reason;
+    }
+  }
+  return null;
 
 }
 
 module.exports = {
   // formatTime
-  formatCount:formatCount
+  formatCount:formatCount,
+  formatSinger:formatSinger,
+  formatReason:formatReason
 }
