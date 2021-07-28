@@ -52,6 +52,7 @@ Page({
   },
 
   toLogin(){
+    if(this.data.userInfo.nickname) return;
     wx.navigateTo({
       url:'/pages/login/login'
     })
@@ -85,7 +86,7 @@ Page({
     if(userInfo){
       //更新userInfo的状态
       this.setData({
-        userInfo:JSON.parse(userInfo)
+        userInfo
       })
       //获取用户播放记录；
       this.getUserRecentPlayList(this.data.userInfo.userId)

@@ -1,1 +1,27 @@
-<view>New Page</view>
+<view class="loginContainer">
+    <form class="userForm" catchsubmit="formSubmit">
+      <view style="margin-bottom:24rpx;">登录体验更多精彩</view>
+      <view class="tip">未注册手机号登录后将自动创建账号</view>
+
+      <view class="userInfoArea">
+        <view class="myInput">
+            <input name="phone" class="userPhone" type="number" placeholder="请输入手机号" />
+        </view>
+        <view class="myInput">
+            <input name="password" class="userPassword" password type="text" placeholder="请输入用户密码" />
+        </view>
+        <view class="checkboxLabel">
+            <checkbox-group name="checkbox">
+                <label>
+                    <checkbox class="checkbox" color="#fe3b3b" value="agree"/><text>同意 《用户协议》 《隐私政策》 《儿童隐私政策》</text>
+                </label>     
+            </checkbox-group>
+                  
+        </view>     
+      </view>
+
+      <view class="btnArea">
+         <button form-type="submit" id="submitBtn" size="default">登录</button>
+      </view>
+    </form>
+</view>

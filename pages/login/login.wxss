@@ -1,3 +1,32 @@
-page {
-  
+.loginContainer{
+    padding:24rpx;
+}
+.tip{
+    color: #e2e2e2;
+    font-size: 24rpx;
+    margin-bottom:40rpx;
+}
+.myInput{
+    border-bottom:1px solid #e4e4e4;
+    padding:16rpx 24rpx;
+    margin-bottom:20rpx;
+}
+.checkboxLabel{
+    margin-bottom:24rpx;
+}
+.checkbox{
+    transform: scale(0.8,0.8);
+}
+
+.checkboxLabel text{
+    font-size:20rpx;
+}
+
+
+
+#submitBtn{
+    color:#fff;
+    width:100%;
+    border-radius:40rpx;
+    background-color:#fe3b3b;
 }
