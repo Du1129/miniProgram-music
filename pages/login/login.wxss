@@ -15,7 +15,7 @@
     margin-bottom:24rpx;
 }
 .checkbox{
-    transform: scale(0.8,0.8);
+    transform: scale(0.7,0.7);
 }
 
 .checkboxLabel text{
