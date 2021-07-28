@@ -17,6 +17,12 @@
           "pathName": "pages/personal/personal",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "每日推荐",
+          "pathName": "pages/recommendSong/recommendSong",
+          "query": "",
+          "scene": null
         }
       ]
     }
