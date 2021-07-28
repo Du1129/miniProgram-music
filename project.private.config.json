@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "个人",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
