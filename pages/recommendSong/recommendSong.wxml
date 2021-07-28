@@ -1,8 +1,10 @@
 <!--pages/recommendSong/recommendSong.wxml-->
+<wxs module="util" src="../../utils/util.wxs"></wxs>
 <view>
     <scroll-view class="listContainer" enable-flex="true">
         <view class="head">
-        nihao
+            <image src="../../static/images/music.png" mode="widthFix"/>
+            <view class="time"><view>{{currentDate}}</view><view>/{{util.formatMonth(currentMonth)}}</view></view>
         </view>
         <view>
             <view class="listTitle">
@@ -14,7 +16,13 @@
             <view class="songList">
                 <view class="songListItem" wx:for="{{recommendSongInfo.dailySongs}}" data-id="{{item.id}}" wx:key="id">
                     <image class="pic" src="{{item.al.picUrl}}" mode="widthFix"/>
-                    <view class="songName"></view>
+                    <view class="songInfo">
+                        <view class="songName hiddenFlow">{{item.name}}</view>
+                        <view class="songAuthor">
+                            <text class="reason" wx:if="{{util.formatReason(item.id,recommendSongInfo.recommendReasons)}}">{{util.formatReason(item.id,recommendSongInfo.recommendReasons)}}</text>
+                            <text class="author hiddenFlow">{{util.formatSinger(item.ar)}} - {{item.al.name}}</text>
+                        </view>
+                    </view>
                     <view class="more"><i class="iconfont icon-gengduo"></i></view>
                 </view>
             </view>

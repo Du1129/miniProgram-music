@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentDate:null,
+    currentMonth:null,
     recommendSongInfo:{}
     
 
@@ -22,6 +24,10 @@ Page({
    */
   onLoad: function (options) {
     this.getRecommendSong();
+    let current = new Date();
+    this.setData({currentDate:current.getDate()})
+    this.setData({currentMonth:current.getMonth()+1})
+    // console.log(this.data.currentTime)
   },
 
   /**

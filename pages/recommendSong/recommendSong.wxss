@@ -3,8 +3,26 @@
 	position: relative;
 	width: 100%;
 	height:500rpx;
-	text-align: center;
 	z-index:2;
+}
+.head image{
+	width:50%;
+}
+
+.time{
+	position:absolute;
+	right:60rpx;
+	bottom:80rpx;
+	color:#fff;
+	display:flex;
+}
+.time view:first-child{
+	padding:0;
+	font-size:80rpx;
+	/* background-color:rgba(255,255,255,.5) */
+}
+.time view:last-child{
+	padding-top:20rpx;
 }
 
 
@@ -17,8 +35,7 @@
     z-index: -1;
 	content: '';
 	border-radius: 0 0 50% 50%;
-	background:url("https://p1.music.126.net/SvTHmm-NFc5UPljzBNG9xA==/109951166219832501.jpg?imageView&quality=89") no-repeat;
-	background-size:auto 500rpx;
+	background-color:#fff1f1;
 
 }
 .listTitle{
@@ -54,14 +71,44 @@
 	margin-right:20rpx;
 	border-radius: 10rpx;
 }
-.songName{
+.songInfo{
 	flex:1;
 	height:100%;
-	background-color: blue;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.songAuthor{
+	font-size:26rpx;
+	display:flex;
+	align-items:center;
+}
+.reason{
+	background-color: #FFFCF7;
+	color:#F0BC45;
+	padding:0 6rpx;
+	margin-right:6rpx;
+}
+.author{
+	flex:1;
+	color: #b9b9b9;
 }
 .more{
 	width:40rpx;
+	height:100%;
+	padding-left:10rpx;
+	line-height:92rpx;
 }
-
+.hiddenFlow{
+	overflow: hidden;
+    white-space: normal;
+    /* text-overflow: -o-ellipsis-lastline; */
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    word-break:break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; 
+}
 
 
