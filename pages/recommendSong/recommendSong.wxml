@@ -1,0 +1,15 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<view>
+    <view class="head">
+        nihao
+    </view>
+    <view>
+        <view class="listTitle">
+            <view class="leftContent">
+                <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
+            </view>
+            <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,41 @@
+/* pages/recommendSong/recommendSong.wxss */
+.head{
+	position: relative;
+	width: 100%;
+	height:500rpx;
+	text-align: center;
+	z-index:2;
+}
+
+
+.head:after{
+    width:180%;
+    height:500rpx;
+    position: absolute;
+	left:-41%;
+	top: 0;
+    z-index: -1;
+	content: '';
+	border-radius: 0 0 50% 50%;
+	background:url("https://p1.music.126.net/SvTHmm-NFc5UPljzBNG9xA==/109951166219832501.jpg?imageView&quality=89") no-repeat;
+	background-size:auto 500rpx;
+
+}
+.listTitle{
+	padding:0 20rpx;
+	font-size:36rpx;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.listTitle .leftContent i{
+	font-size:44rpx;
+	color:#fe3b3b;
+	margin-right:24rpx;
+}
+.listTitle .rightContent i{
+	font-size:50rpx;
+}
+
+
+
