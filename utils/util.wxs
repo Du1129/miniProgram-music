@@ -17,10 +17,12 @@
 var formatCount = function (count) {
   if(count<100000){
     return count+"";
-  }else{
+  }else if(count>10000 && count<100000000){
     count = Math.ceil(count/10000);
     return count+"万"
-    
+  }else{
+    count = Math.ceil(count/100000000)
+    return count+"亿"
   }
 
 }
