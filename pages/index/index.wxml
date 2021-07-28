@@ -1,27 +1,27 @@
 <!--index.wxml-->
 <wxs module="util" src="../../utils/util.wxs"></wxs>
 <view class="container">
-<view class="topContent">
-  <swiper class="" 
-  autoplay="true" 
-  circular="true" interval="5000" duration="1000">
-    <swiper-item wx:for="{{bannerList}}"
-    wx:key="bannerId"
-    class="swiperItem">
-      <image class="swiperImg" src="{{item.pic}}" mode="widthFix">
-        <text class="swiperText" style="background-color:{{item.titleColor}}">
-          {{item.typeTitle}}
-        </text>
-      </image>
-    </swiper-item>
-  </swiper>
-  <!-- 导航栏 -->
-  <scroll-view class="nav" scroll-x="true" enable-flex="true">
-      <view class="navItem" wx:for="{{navIconList}}"  data-name="{{item.name}}" bindtap="toSomePage" wx:key="id">
-        <image class="navImg" src="{{item.iconUrl}}"/>
-        <text>{{item.name}}</text>
-      </view>
-  </scroll-view>
+  <view class="topContent">
+    <swiper class="" 
+    autoplay="true" 
+    circular="true" interval="5000" duration="1000">
+      <swiper-item wx:for="{{bannerList}}"
+      wx:key="bannerId"
+      class="swiperItem">
+        <image class="swiperImg" src="{{item.pic}}" mode="widthFix">
+          <text class="swiperText" style="background-color:{{item.titleColor}}">
+            {{item.typeTitle}}
+          </text>
+        </image>
+      </swiper-item>
+    </swiper>
+    <!-- 导航栏 -->
+    <scroll-view class="nav" scroll-x="true" enable-flex="true">
+        <view class="navItem" wx:for="{{navIconList}}"  data-name="{{item.name}}" bindtap="toSomePage" wx:key="id">
+          <image class="navImg" src="{{item.iconUrl}}"/>
+          <text>{{item.name}}</text>
+        </view>
+    </scroll-view>
   </view>
 
   <!--推荐歌单-->
@@ -59,11 +59,5 @@
       </swiper-item>
     </swiper>
       
-  </view>
-  
-    
-  
-    
-    
-    
+  </view> 
 </view>
