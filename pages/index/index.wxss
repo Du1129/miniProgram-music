@@ -64,7 +64,7 @@
 }
 
 /*推荐歌单*/
-.recommandList{
+.recommendList{
     padding:24rpx 24rpx;
     background-color: #fff;
     border-top:1px solid #f9f9f9;
@@ -72,20 +72,22 @@
     border-bottom-right-radius: 16rpx;
     /* margin-top:24rpx; */
 }
-.recommandListDetail{
+.recommendListDetail{
     white-space: nowrap;
 }
-.recommandItem{
-    display: inline-block;
+.recommendItem{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width:28%;
     margin-right:20rpx;
 }
-.recommandItem image{
+.recommendItem>image{
     width:100%;
     border-radius: 20rpx;
     position: relative;
 }
-.recommandItem .playCount{
+.recommendItem .playCount{
     position:absolute;
     right:8rpx;
     top:8rpx;
@@ -101,13 +103,14 @@
 .playCount image{
     width:28rpx;
 }
-.recommandItem .name{
+.recommendItem .name{
+    margin-top:10rpx;
     font-size: 28rpx;
     line-height: 30rpx;
     overflow: hidden;
     white-space: normal;
-    text-overflow: -o-ellipsis-lastline;
-    /* text-overflow:ellipsis; */
+    /* text-overflow: -o-ellipsis-lastline; */
+    text-overflow:ellipsis;
     display: -webkit-box;
     word-break:break-all;
     -webkit-box-orient: vertical;

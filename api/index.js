@@ -20,7 +20,7 @@ export const reqHomeNavIcon = () => {
     return request({url:"/homepage/dragon/ball"})
 }
 //获取首页推荐歌单
-export const reqHomeRecommandList = (limit) => {
+export const reqHomeRecommendList = (limit) => {
     return request({url:"/personalized",data:{
         limit
     }})
@@ -36,5 +36,11 @@ export const reqRecentRecord = (data) => {
     return request({
         url:"/user/record",
         data
+    })
+}
+//获取每日推荐
+export const reqEverydayRecommand = () => {
+    return request({
+        url:"/recommend/songs"
     })
 }

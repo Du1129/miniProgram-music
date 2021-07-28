@@ -1,17 +1,16 @@
 // index.js
 
 import {
-  reqLoginData,
   reqBannerData,
   reqHomeNavIcon,
-  reqHomeRecommandList,
+  reqHomeRecommendList,
   reqTopListDetail
 } from "../../api/index.js"
 Page({
   data: {
     bannerList:[],
     navIconList:[],
-    recommandList:[],
+    recommendList:[],
     topListId:{
       0: '3779629', //云音乐新歌榜
       1: '3778678', //云音乐热歌榜
@@ -51,38 +50,37 @@ Page({
       35: '3001795926', //云音乐ACG游戏榜
       36: '3001890046', //云音乐ACG VOCALOID榜
     },
-    topList:[]
+    topList:[],
+    tapRoutePath:[
+      {name:'每日推荐',path:'/pages/recommendSong/recommendSong'}
+    ]
   },
   // 事件处理函数
   onLoad() {
-    this.getLogin()
     this.getSwiperList();
     this.getHomePageIcon();
-    this.getRecommandList();
+    
     this.getTopList();
+    this.getRecommendList();
   },
-  
-  async getLogin(){
-    const res = await reqLoginData({
-      phone:'15602241613',
-      password:'asd31415926535'
-    })
-    console.log(res);
-  },
+  //获取轮播图
   async getSwiperList(){
     const {banners} = await reqBannerData();
-    console.log(banners);
+    // console.log(banners);
     this.setData({bannerList:banners})
   },
+  //获取图标导航
   async getHomePageIcon(){
     const {data} = await reqHomeNavIcon();
-    console.log(data)
+    // console.log(data)
     this.setData({navIconList:data})
   },
-  async getRecommandList(){
-    const {result:recommandList} = await reqHomeRecommandList(6);
-    this.setData({recommandList})
+  //获取推荐歌单
+  async getRecommendList(){
+    const {result:recommendList} = await reqHomeRecommendList(6);
+    this.setData({recommendList})
   },
+  //获取排行榜
   getTopList(){
     let idArr = [];
     while(idArr.length<5){
@@ -102,8 +100,18 @@ Page({
       })
       this.setData({topList})
     })
-    console.log(topList);
-    
-    
-  }
+    // console.log(topList);
+  },
+  //导航图标点击事件
+  toSomePage(e){
+    const {name} = e.currentTarget.dataset;
+    const target = this.data.tapRoutePath.find(item => item.name === name)
+    console.log(target)
+    if(target){
+      wx.navigateTo({
+        url: target.path
+      })
+    }
+  },
+  
 })
