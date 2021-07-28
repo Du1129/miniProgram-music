@@ -10,6 +10,9 @@ export const request = ({url,data={},method='get'}) => {
             url: BASEURL+url,
             data,
             method,
+            header:{
+                 cookie:wx.getStorageSync('cookie')
+            },
             success(res){
                 resolve(res.data);
                 wx.hideLoading()
