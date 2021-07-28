@@ -22,7 +22,7 @@
 
 }
 .listTitle{
-	padding:0 20rpx;
+	padding:24rpx 24rpx;
 	font-size:36rpx;
 	display:flex;
 	justify-content: space-between;
@@ -35,6 +35,32 @@
 }
 .listTitle .rightContent i{
 	font-size:50rpx;
+}
+
+.songList{
+	padding:24rpx;
+}
+.songListItem{
+	height:120rpx;
+	box-sizing: border-box;
+	padding:15rpx 0;
+	/* background-color:yellow; */
+	display: flex;
+	align-items: center;
+}
+.pic{
+	width:90rpx;
+	height:90rpx;
+	margin-right:20rpx;
+	border-radius: 10rpx;
+}
+.songName{
+	flex:1;
+	height:100%;
+	background-color: blue;
+}
+.more{
+	width:40rpx;
 }
 
 

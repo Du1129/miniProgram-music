@@ -1,15 +1,26 @@
 <!--pages/recommendSong/recommendSong.wxml-->
 <view>
-    <view class="head">
+    <scroll-view class="listContainer" enable-flex="true">
+        <view class="head">
         nihao
-    </view>
-    <view>
-        <view class="listTitle">
-            <view class="leftContent">
-                <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
-            </view>
-            <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
         </view>
-    </view>
+        <view>
+            <view class="listTitle">
+                <view class="leftContent">
+                    <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
+                </view>
+                <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
+            </view>
+            <view class="songList">
+                <view class="songListItem" wx:for="{{recommendSongInfo.dailySongs}}" data-id="{{item.id}}" wx:key="id">
+                    <image class="pic" src="{{item.al.picUrl}}" mode="widthFix"/>
+                    <view class="songName"></view>
+                    <view class="more"><i class="iconfont icon-gengduo"></i></view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+      
+    
 </view>
 

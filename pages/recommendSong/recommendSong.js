@@ -6,12 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    recommendSongInfo:{}
     
 
   },
   async getRecommendSong(){
-    let res = await reqEverydayRecommand();
-    console.log(res);
+    let {data} = await reqEverydayRecommand();
+    this.setData({recommendSongInfo:data})
+    console.log(data);
   },
 
 
