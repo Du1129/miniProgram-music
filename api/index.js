@@ -9,6 +9,20 @@ export const reqLoginData = (data) => {
         }   
     )
 }
+//获取用户目前等级
+export const reqUserLevel = () => {
+    return request({url:"/user/level"})
+}
+
+//获取用户歌单(包括我喜欢，我创建的，我收藏的)
+export const reqUserPlayList = (uid) => {
+    return request({
+        url:'/user/playlist',
+        data:{
+            uid
+        }
+    })
+}
 //获取轮播图数据
 export const reqBannerData = () => {
     return request({
