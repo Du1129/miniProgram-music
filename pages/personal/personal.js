@@ -1,8 +1,8 @@
 // pages/personal/personal.js
-let startY = 0;
-let moveY = 0;
-let moveDistance = 0;
-import {reqRecentRecord} from '../../api/index'
+// let startY = 0;
+// let moveY = 0;
+// let moveDistance = 0;
+import {reqUserLevel,reqUserPlayList} from '../../api/index'
 Page({
 
   /**
@@ -12,7 +12,12 @@ Page({
     coverTransform:'translateY(0)',
     coverTransition:'',
     userInfo:{},
-    recentPlayList:[]
+    userLevel:null,
+    recentPlayList:[],
+    favorInfo:{},//我喜欢的
+    createdPlayList:[],//我创建的
+    starPlayList:[],//我收藏的
+
 
   },
 
@@ -23,33 +28,33 @@ Page({
 
 
   },
-  handleTouchStart(event){
-    startY = event.touches[0].clientY;
-    this.setData({
-      coverTransition:''
-    })
+  // handleTouchStart(event){
+  //   startY = event.touches[0].clientY;
+  //   this.setData({
+  //     coverTransition:''
+  //   })
 
-  },
-  handleTouchMove(event){
-    moveY = event.touches[0].clientY;
-    moveDistance = moveY - startY;
-    if(moveDistance <= 0 ){
-      return;
-    }
-    if(moveDistance >= 80){
-      moveDistance = 80;
-    }
-    this.setData({
-      coverTransform:`translateY(${moveDistance}rpx)`
-    })
+  // },
+  // handleTouchMove(event){
+  //   moveY = event.touches[0].clientY;
+  //   moveDistance = moveY - startY;
+  //   if(moveDistance <= 0 ){
+  //     return;
+  //   }
+  //   if(moveDistance >= 80){
+  //     moveDistance = 80;
+  //   }
+  //   this.setData({
+  //     coverTransform:`translateY(${moveDistance}rpx)`
+  //   })
 
-  },
-  handleTouchEnd(){
-    this.setData({
-      coverTransform:`translateY(0)`,
-      coverTransition:`transform 0.5s linear`
-    })
-  },
+  // },
+  // handleTouchEnd(){
+  //   this.setData({
+  //     coverTransform:`translateY(0)`,
+  //     coverTransition:`transform 0.5s linear`
+  //   })
+  // },
 
   toLogin(){
     if(this.data.userInfo.nickname) return;
@@ -57,15 +62,35 @@ Page({
       url:'/pages/login/login'
     })
   },
-  async getUserRecentPlayList(userId) {
-    let recentPlayListData = await reqRecentRecord({uid:userId,type:0});
-    let index = 0;
-    let recentPlayList = recentPlayListData.allData.splice(0,10).map(item=>{
-      item.id = index++;
-      return item;
-    });
-    this.setData({
-      recentPlayList
+  // async getUserRecentPlayList(userId) {
+  //   let recentPlayListData = await reqRecentRecord({uid:userId,type:0});
+  //   let index = 0;
+  //   let recentPlayList = recentPlayListData.allData.splice(0,10).map(item=>{
+  //     item.id = index++;
+  //     return item;
+  //   });
+  //   this.setData({
+  //     recentPlayList
+  //   })
+  // },
+  async getUserLevel(){
+    let {data} = await reqUserLevel();
+    this.setData({userLevel:data.level});
+  },
+  async getUserPlayList(uid){
+    let res = await reqUserPlayList(uid)
+    console.log(res.playlist);
+    this.setData({favorInfo:res.playlist[0]});
+    res.playlist.shift();
+    let createdPlayList=[] , starPlayList = [];
+    res.playlist.forEach(item => {
+      if(item.userId === uid){
+        createdPlayList.push(item);
+        this.setData({createdPlayList})
+      }else{
+        starPlayList.push(item);
+        this.setData({starPlayList})
+      }
     })
   },
 
@@ -84,12 +109,13 @@ Page({
     let userInfo = wx.getStorageSync('userInfo');
     // console.log(userInfo);
     if(userInfo){
+      //获取用户等级
+      this.getUserLevel();
+      this.getUserPlayList(userInfo.userId);
       //更新userInfo的状态
       this.setData({
         userInfo
       })
-      //获取用户播放记录；
-      this.getUserRecentPlayList(this.data.userInfo.userId)
     }
 
   },
