@@ -58,3 +58,14 @@ export const reqEverydayRecommand = () => {
         url:"/recommend/songs"
     })
 }
+//视频页相关
+//分类列表
+export const reqVideoGroupList = () => {
+    return request({url:'/video/group/list'})
+}
+export const reqVideoList = (data) => {
+    return request({
+        url:"/video/group",
+        data
+    })
+}
