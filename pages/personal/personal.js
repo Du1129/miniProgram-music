@@ -105,13 +105,12 @@ Page({
     })
   },
   scrollTap(ev){
-    console.log(ev.currentTarget.dataset.type);
+    // console.log(ev.currentTarget.dataset.type);
     let type = ev.currentTarget.dataset.type;
     wx.pageScrollTo({
       selector:`.${type}`,
       duration:500
     })
-    this.getStarListTop();
   },
 
 
@@ -150,7 +149,7 @@ Page({
   onPageScroll(ev){
     // console.log(ev.scrollTop);
     
-    if(ev.scrollTop>this.data.starTop){
+    if(ev.scrollTop>this.data.starTop-12){
       this.setData({isActive:false})
     }else{
       this.setData({isActive:true})
