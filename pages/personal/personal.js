@@ -17,6 +17,9 @@ Page({
     favorInfo:{},//我喜欢的
     createdPlayList:[],//我创建的
     starPlayList:[],//我收藏的
+    isFixed:false,//是否固定切换栏
+    isActive:true,
+    starTop:null
 
 
   },
@@ -92,6 +95,23 @@ Page({
         this.setData({starPlayList})
       }
     })
+    //
+    var query = wx.createSelectorQuery();
+    query.select('.star').boundingClientRect();//添加节点的布局位置的查询请求
+    query.exec((res)=>{ //执行所有添加的请求
+        // console.log(res);  
+        // this.setData()
+        this.setData({starTop:res[0].top})
+    })
+  },
+  scrollTap(ev){
+    console.log(ev.currentTarget.dataset.type);
+    let type = ev.currentTarget.dataset.type;
+    wx.pageScrollTo({
+      selector:`.${type}`,
+      duration:500
+    })
+    this.getStarListTop();
   },
 
 
@@ -99,7 +119,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -117,6 +137,7 @@ Page({
         userInfo
       })
     }
+    
 
   },
 
@@ -125,6 +146,21 @@ Page({
    */
   onHide: function () {
 
+  },
+  onPageScroll(ev){
+    // console.log(ev.scrollTop);
+    
+    if(ev.scrollTop>this.data.starTop){
+      this.setData({isActive:false})
+    }else{
+      this.setData({isActive:true})
+    }
+    if(ev.scrollTop>310){
+      this.setData({isFixed:true})
+    }
+    else{
+      this.setData({isFixed:false})
+    }
   },
 
   /**

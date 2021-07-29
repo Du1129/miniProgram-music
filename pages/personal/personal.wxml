@@ -43,6 +43,20 @@
                 <view>{{favorInfo.trackCount}}首</view>
             </view>
         </view>
+
+    </view>
+
+    <view class="activePlaylist {{isFixed?'fixPlaylist':''}}">
+        <view class="{{isActive?'active':''}}" data-type="created" bindtap="scrollTap">
+            创建歌单
+        </view>
+        |
+        <view class="{{!isActive?'active':''}}" data-type="star" bindtap="scrollTap">
+            收藏歌单
+        </view> 
+    </view>
+    <view wx:if="{{isFixed}}" class="activePlaylist"></view>
+    <view class="playlistContainer">
         <view class="created">
             <view class="playlistTitle">
                 <text>创建歌单({{createdPlayList.length}}个)</text>
@@ -57,7 +71,7 @@
                 </view>
                 <view class="nanaFont nana-gengduo"></view>
             </view>
-              
+                
 
         </view>
 
@@ -75,13 +89,6 @@
                 </view>
                 <view class="nanaFont nana-gengduo"></view>
             </view>
-        </view>
-
-        <!-- 个人中心列表 -->
-        <view class="personalContent">
-            
-
-            
         </view>
     </view>
 </view>
