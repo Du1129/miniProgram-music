@@ -8,15 +8,17 @@ Page({
   data: {
     currentDate:null,
     currentMonth:null,
-    recommendSongInfo:{}
+    recommendSongInfo:{},
+    isFix:false
     
 
   },
   async getRecommendSong(){
     let {data} = await reqEverydayRecommand();
     this.setData({recommendSongInfo:data})
-    console.log(data);
+    // console.log(data);
   },
+
 
 
   /**
@@ -35,6 +37,14 @@ Page({
    */
   onReady: function () {
 
+  },
+  onPageScroll:function(ev){
+    // console.log(ev.scrollTop);
+    if(ev.scrollTop>250){
+      this.setData({isFix:true})
+    }else{
+      this.setData({isFix:false})
+    }
   },
 
   /**

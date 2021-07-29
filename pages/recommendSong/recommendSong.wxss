@@ -44,6 +44,19 @@
 	display:flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color:#fff;
+	/* border:none; */
+}
+.fixed{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	border:none;
+}
+.whiteBox{
+	height:104rpx;
+	width:100%;
 }
 .listTitle .leftContent i{
 	font-size:44rpx;

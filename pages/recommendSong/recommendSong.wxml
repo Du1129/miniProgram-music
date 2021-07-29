@@ -1,18 +1,31 @@
 <!--pages/recommendSong/recommendSong.wxml-->
 <wxs module="util" src="../../utils/util.wxs"></wxs>
 <view>
-    <scroll-view class="listContainer" enable-flex="true">
+    <scroll-view 
+    class="listContainer" 
+    enable-flex="true"
+    >
         <view class="head">
             <image src="../../static/images/music.png" mode="widthFix"/>
             <view class="time"><view>{{currentDate}}</view><view>/{{util.formatMonth(currentMonth)}}</view></view>
         </view>
         <view>
-            <view class="listTitle">
+            <!-- <block wx:if="{{isFix}}">
+                <view class="listTitle fixed">
+                    <view class="leftContent">
+                        <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
+                    </view>
+                    <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
+                </view>
+            </block> -->
+            
+            <view class="listTitle {{isFix?'fixed':''}}">
                 <view class="leftContent">
                     <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
                 </view>
                 <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
             </view>
+            <view class="whiteBox" wx:if="{{isFix}}"></view>
             <view class="songList">
                 <view class="songListItem" wx:for="{{recommendSongInfo.dailySongs}}" data-id="{{item.id}}" wx:key="id">
                     <image class="pic" src="{{item.al.picUrl}}" mode="widthFix"/>
