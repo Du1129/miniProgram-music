@@ -82,7 +82,7 @@ Page({
   },
   async getUserPlayList(uid){
     let res = await reqUserPlayList(uid)
-    console.log(res.playlist);
+    // console.log(res.playlist);
     this.setData({favorInfo:res.playlist[0]});
     res.playlist.shift();
     let createdPlayList=[] , starPlayList = [];
