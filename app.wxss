@@ -1,2 +1,8 @@
 /**app.wxss**/
-@import "./static/iconfont/iconfont.wxss"
+@import "./static/iconfont/iconfont.wxss";
+
+@import "./static/nanaFont/nanaFont.wxss";
+
+::-webkit-scrollbar{
+    display:none;
+}
