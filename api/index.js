@@ -69,3 +69,8 @@ export const reqVideoList = (data) => {
         data
     })
 }
+
+//请求视频播放url
+export const reqVideoUrl = (id) => {
+    return request({url:`/video/url?id=${id}`})
+}
