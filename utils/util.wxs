@@ -18,6 +18,13 @@ var formatMonth = function (number){
   if(number<10) return '0'+number;
   else return number;
 }
+// var formatVideoUrl = function (vid,urls){
+//   var length = urls.length;
+//   for(var i = 0;i<length;i++){
+//     if(urls[i].id === vid) return urls[i].url;
+//     else return ''
+//   }
+// }
 
 var formatCount = function (count) {
   if(count<100000){

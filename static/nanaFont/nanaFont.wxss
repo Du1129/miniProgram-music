@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "nanaFont"; /* Project id 2706700 */
+  src: url('//at.alicdn.com/t/font_2706700_wmxr61gl08.woff2?t=1627627839138') format('woff2'),
+       url('//at.alicdn.com/t/font_2706700_wmxr61gl08.woff?t=1627627839138') format('woff'),
+       url('//at.alicdn.com/t/font_2706700_wmxr61gl08.ttf?t=1627627839138') format('truetype');
+}
+
+.nanaFont {
+  font-family: "nanaFont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nana-fenxiang:before {
+  content: "\e602";
+}
+
+.nana-dianzan:before {
+  content: "\e6f6";
+}
+
+.nana-sousuo:before {
+  content: "\e609";
+}
+
+.nana-gengduo:before {
+  content: "\e689";
+}
+
+.nana-tianjia:before {
+  content: "\e63b";
+}
+
+.nana-wancheng:before {
+  content: "\e6a7";
+}
+
+.nana-tianchongxing:before {
+  content: "\e62a";
+}
+
+.nana-shoucang:before {
+  content: "\e6c8";
+}
+
+.nana-bofang:before {
+  content: "\e60a";
+}
+
+.nana-yinlemusic216:before {
+  content: "\e71e";
+}
+
+.nana-arrow-right:before {
+  content: "\e646";
+}
+
+.nana-wanchengyunda:before {
+  content: "\e78b";
+}
+
+.nana-play-circle-fill:before {
+  content: "\eb16";
+}
