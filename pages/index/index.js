@@ -4,7 +4,7 @@ import {
   reqBannerData,
   reqHomeNavIcon,
   reqHomeRecommendList,
-  reqTopListDetail
+  reqPlayListDetail
 } from "../../api/index.js"
 Page({
   data: {
@@ -91,7 +91,7 @@ Page({
     }
     let topList = [];
     idArr.forEach(async (item) => {
-      const {playlist} = await reqTopListDetail(this.data.topListId[item]);
+      const {playlist} = await reqPlayListDetail(this.data.topListId[item]);
       const {id,name,tracks} = playlist;
       topList.push({
         id,
@@ -113,5 +113,11 @@ Page({
       })
     }
   },
+  toPlaylistDetail(e){
+    console.log(e.currentTarget.id);
+    wx.navigateTo({
+      url:`/pages/playlistDetail/playlistDetail?id=${e.currentTarget.id}`
+    })
+  }
   
 })

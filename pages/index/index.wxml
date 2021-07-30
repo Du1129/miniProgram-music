@@ -28,7 +28,7 @@
   <view class="recommendList">
     <NavHeader title="推荐歌单"></NavHeader>
     <scroll-view class="recommendListDetail" scroll-x="true" enable-flex="true">
-      <view class="recommendItem" wx:for="{{recommendList}}" wx:key="id">
+      <view class="recommendItem" wx:for="{{recommendList}}" wx:key="id" id="{{item.id}}" bindtap="toPlaylistDetail">
         <image src="{{item.picUrl}}" mode="widthFix">
           <view class="playCount">
             <image src="../../static/images/bofang.png" mode="widthFix"/><text>{{util.formatCount(item.playCount)}}</text>

@@ -5,7 +5,8 @@
     "pages/personal/personal",
     "pages/login/login",
     "pages/recommendSong/recommendSong",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/playlistDetail/playlistDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

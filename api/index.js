@@ -39,8 +39,8 @@ export const reqHomeRecommendList = (limit) => {
         limit
     }})
 }
-//获取首页排行榜数据
-export const reqTopListDetail = (id) => {
+//获取歌单，排行榜详情数据
+export const reqPlayListDetail = (id) => {
     return request({
         url:`/playlist/detail?id=${id}`
     })

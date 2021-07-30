@@ -1,0 +1,6 @@
+<!--pages/playlistDetail/playlistDetail.wxml-->
+<view>
+    <view class="playlistInfo haveBg">
+    你好
+    </view>
+</view>

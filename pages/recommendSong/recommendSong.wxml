@@ -9,16 +9,8 @@
             <image src="../../static/images/music.png" mode="widthFix"/>
             <view class="time"><view>{{currentDate}}</view><view>/{{util.formatMonth(currentMonth)}}</view></view>
         </view>
+
         <view>
-            <!-- <block wx:if="{{isFix}}">
-                <view class="listTitle fixed">
-                    <view class="leftContent">
-                        <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
-                    </view>
-                    <view class="rightContent"><i class="nanaFont nana-wanchengyunda"></i></view>
-                </view>
-            </block> -->
-            
             <view class="listTitle {{isFix?'fixed':''}}">
                 <view class="leftContent">
                     <i class="nanaFont nana-play-circle-fill"></i><text>播放全部</text>
