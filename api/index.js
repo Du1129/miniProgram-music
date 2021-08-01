@@ -74,3 +74,26 @@ export const reqVideoList = (data) => {
 export const reqVideoUrl = (id) => {
     return request({url:`/video/url?id=${id}`})
 }
+//歌曲播放页相关
+export const reqSongDetail = (ids) => {
+    return request({url:'/song/detail',data:{ids}})
+}
+export const reqSongUrl = (id) => {
+    return request({
+        url:'/song/url',
+        data:{id}
+    })
+}
+//搜索
+export const reqSearchData = (data) => {
+    return request({
+        url:'/search',
+        data
+    })
+}
+export const reqSearchDefault = () => {
+    return request({
+        url:'/search/default'
+    })
+}
+export const reqSearchHot = () => {return request({url:'/search/hot/detail'})}
