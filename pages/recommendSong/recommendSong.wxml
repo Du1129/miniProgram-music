@@ -19,7 +19,7 @@
             </view>
             <view class="whiteBox" wx:if="{{isFix}}"></view>
             <view class="songList">
-                <view class="songListItem" wx:for="{{recommendSongInfo.dailySongs}}" data-id="{{item.id}}" wx:key="id">
+                <view class="songListItem" wx:for="{{recommendSongInfo.dailySongs}}" bindtap="toSongDetail" data-id="{{item.id}}" wx:key="id">
                     <image class="pic" src="{{item.al.picUrl}}" mode="widthFix"/>
                     <view class="songInfo">
                         <view class="songName hiddenFlow">{{item.name}}</view>

@@ -31,6 +31,15 @@ Page({
     this.setData({currentMonth:current.getMonth()+1})
     // console.log(this.data.currentTime)
   },
+  toSongDetail(event){
+    let {id} = event.currentTarget.dataset;
+    // this.setData({
+      
+    // });
+    wx.navigateTo({
+      url:'/pages/songDetail/songDetail?musicId='+ id
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
