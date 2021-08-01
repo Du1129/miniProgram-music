@@ -1,8 +1,8 @@
 @font-face {
   font-family: "nanaFont"; /* Project id 2706700 */
-  src: url('//at.alicdn.com/t/font_2706700_wmxr61gl08.woff2?t=1627627839138') format('woff2'),
-       url('//at.alicdn.com/t/font_2706700_wmxr61gl08.woff?t=1627627839138') format('woff'),
-       url('//at.alicdn.com/t/font_2706700_wmxr61gl08.ttf?t=1627627839138') format('truetype');
+  src: url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.woff2?t=1627833451356') format('woff2'),
+       url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.woff?t=1627833451356') format('woff'),
+       url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.ttf?t=1627833451356') format('truetype');
 }
 
 .nanaFont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.nana-shanchu:before {
+  content: "\e7e2";
+}
+
+.nana-left-arrow:before {
+  content: "\e68a";
 }
 
 .nana-fenxiang:before {
