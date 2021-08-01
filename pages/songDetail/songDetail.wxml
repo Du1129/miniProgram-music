@@ -1,0 +1,23 @@
+<!--pages/songDetail/songDetail.wxml-->
+<view class="navBar" style='top:{{statusH}}px'>
+    <view class="navLeft">
+        <view bindtap="toPrePage">
+            <i class="nanaFont nana-left-arrow"></i>
+        </view>   
+    </view>
+    <view class="navBarTitle">{{song.name}}</view>
+    <view class="navRight"></view>
+</view>
+<view class="songDetailContainer">
+    <image class="bgImg" src="{{song.al.picUrl}}" mode="heightFix"/>
+    <!-- <view class="author">{{song.ar[0].name}}</view>
+    <view class="circle"></view>
+    <image class="needle {{isPlay?'needleActive':''}}" src="/static/images/song/needle.png"></image>
+    <view class="discContainer {{isPlay &&'discAnimation'}}">
+        <image class="disc" src="/static/images/song/disc.png"></image>
+        <image class="musicImg" src="{{song.al.picUrl}}"></image>
+    </view> -->
+    <scroll-view class="scrollContent" scroll-y enable-flex style="margin-top:{{scrollTop}}px">
+        <view>nihao</view>     
+    </scroll-view>
+</view>
