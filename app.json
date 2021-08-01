@@ -6,13 +6,17 @@
     "pages/login/login",
     "pages/recommendSong/recommendSong",
     "pages/search/search",
-    "pages/playlistDetail/playlistDetail"
+    "pages/playlistDetail/playlistDetail",
+    "pages/songDetail/songDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fe3b3b",
     "navigationBarTextStyle": "white"
   },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "tabBar": {
     "list": [
       {
