@@ -1,8 +1,8 @@
 @font-face {
   font-family: "nanaFont"; /* Project id 2706700 */
-  src: url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.woff2?t=1627833451356') format('woff2'),
-       url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.woff?t=1627833451356') format('woff'),
-       url('//at.alicdn.com/t/font_2706700_rzb4fhpgs7c.ttf?t=1627833451356') format('truetype');
+  src: url('//at.alicdn.com/t/font_2706700_dn5lu2qoxy.woff2?t=1627886105037') format('woff2'),
+       url('//at.alicdn.com/t/font_2706700_dn5lu2qoxy.woff?t=1627886105037') format('woff'),
+       url('//at.alicdn.com/t/font_2706700_dn5lu2qoxy.ttf?t=1627886105037') format('truetype');
 }
 
 .nanaFont {
@@ -11,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.nana-shangyishou:before {
+  content: "\e6c0";
+}
+
+.nana-xiayishou:before {
+  content: "\e6ae";
+}
+
+.nana-kaishi:before {
+  content: "\e6af";
+}
+
+.nana-zanting:before {
+  content: "\e6b0";
+}
+
+.nana-xunhuan:before {
+  content: "\e6bd";
+}
+
+.nana-gedan:before {
+  content: "\e6bf";
 }
 
 .nana-shanchu:before {

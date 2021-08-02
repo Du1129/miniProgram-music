@@ -9,8 +9,6 @@ Page({
    * 页面的初始数据
    */
   data:{
-    coverTransform:'translateY(0)',
-    coverTransition:'',
     userInfo:{},
     userLevel:null,
     recentPlayList:[],
@@ -31,33 +29,6 @@ Page({
 
 
   },
-  // handleTouchStart(event){
-  //   startY = event.touches[0].clientY;
-  //   this.setData({
-  //     coverTransition:''
-  //   })
-
-  // },
-  // handleTouchMove(event){
-  //   moveY = event.touches[0].clientY;
-  //   moveDistance = moveY - startY;
-  //   if(moveDistance <= 0 ){
-  //     return;
-  //   }
-  //   if(moveDistance >= 80){
-  //     moveDistance = 80;
-  //   }
-  //   this.setData({
-  //     coverTransform:`translateY(${moveDistance}rpx)`
-  //   })
-
-  // },
-  // handleTouchEnd(){
-  //   this.setData({
-  //     coverTransform:`translateY(0)`,
-  //     coverTransition:`transform 0.5s linear`
-  //   })
-  // },
 
   toLogin(){
     if(this.data.userInfo.nickname) return;
@@ -65,17 +36,6 @@ Page({
       url:'/pages/login/login'
     })
   },
-  // async getUserRecentPlayList(userId) {
-  //   let recentPlayListData = await reqRecentRecord({uid:userId,type:0});
-  //   let index = 0;
-  //   let recentPlayList = recentPlayListData.allData.splice(0,10).map(item=>{
-  //     item.id = index++;
-  //     return item;
-  //   });
-  //   this.setData({
-  //     recentPlayList
-  //   })
-  // },
   async getUserLevel(){
     let {data} = await reqUserLevel();
     this.setData({userLevel:data.level});

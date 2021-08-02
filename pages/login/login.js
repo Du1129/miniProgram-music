@@ -27,8 +27,8 @@ Page({
       title: '登录成功',
       icon:'success'
     })
-    wx.navigateBack({
-      delta: 1
+    wx.switchTab({
+      url: '/pages/index/index',
     });
   },
   onReady() {

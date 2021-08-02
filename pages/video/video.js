@@ -22,7 +22,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getVideoGroupListData();
+    let userInfo = wx.getStorageSync('userInfo');
+    if(!userInfo){
+      wx.showToast({
+        title: '请先登录',
+      })
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+    }else{
+      this.getVideoGroupListData();
+    }
+    
 
   },
   async getVideoGroupListData(){
@@ -137,13 +148,13 @@ Page({
 
   },
   async handleToLower(){
-    //网易云没提供分页功能，以下是模拟数据
     let {offset} = this.data;
     offset++;
     this.setData({offset})
     let {videoList} = this.data;
     const {datas} = await reqVideoList({id:this.data.navId,offset})
     let index = offset*datas.length;
+    console.log(222,datas);
     let newVideoList = datas.map((item) => {
       item.id = index++;
       return item;
@@ -205,15 +216,15 @@ Page({
     console.log(from)
     if(from === 'button'){
       return {
-        title:'来自button',
+        title:'来网易云观看更多视频',
         page:'/pages/video/video',
-        imageUrl: '/static/images/nvshen.jpg'
+        imageUrl: this.data.videoList[0].data.coverUrl
       }
     }else{
       return {
-        title:'来自右上角的转发',
+        title:'视频页',
         page:'/pages/video/video',
-        imageUrl: '/static/images/nvshen.jpg'
+        imageUrl: this.data.videoList[0].data.coverUrl
       }
     }
 

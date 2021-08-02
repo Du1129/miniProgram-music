@@ -9,15 +9,31 @@
     <view class="navRight"></view>
 </view>
 <view class="songDetailContainer">
+    <!--模糊背景图-->
     <image class="bgImg" src="{{song.al.picUrl}}" mode="heightFix"/>
-    <!-- <view class="author">{{song.ar[0].name}}</view>
-    <view class="circle"></view>
-    <image class="needle {{isPlay?'needleActive':''}}" src="/static/images/song/needle.png"></image>
-    <view class="discContainer {{isPlay &&'discAnimation'}}">
-        <image class="disc" src="/static/images/song/disc.png"></image>
-        <image class="musicImg" src="{{song.al.picUrl}}"></image>
-    </view> -->
+    
     <scroll-view class="scrollContent" scroll-y enable-flex style="margin-top:{{scrollTop}}px">
-        <view>nihao</view>     
+        <view class="circle"></view>
+        <image class="needle {{isPlay?'needleActive':''}}" src="/static/images/song/needle.png"></image>
+        <view class="discContainer {{isPlay &&'discAnimation'}}">
+            <image class="disc" src="/static/images/song/disc.png"></image>
+            <image class="musicImg" src="{{song.al.picUrl}}"></image>
+        </view>
+        <view class="progress-box">
+            <view>{{currentTime}}</view>
+            <progress percent="{{currentPercent}}" color="#fe3b3b" stroke-width="3" />
+            <view>{{totalTime}}</view>
+        </view>
+        <view class="controlBar">
+            <view class="nanaFont nana-xunhuan"></view>
+            <view class="nanaFont nana-shangyishou" data-type="pre" bindtap="switchSong"></view>
+            <view class="nanaFont {{isPlay?'nana-zanting':'nana-kaishi'}}" bindtap="handlePlay"></view>
+            <view class="nanaFont nana-xiayishou" data-type="next" bindtap="switchSong"></view>
+            <view class="nanaFont nana-gedan"></view>
+        </view>
+
+
+          
+             
     </scroll-view>
 </view>

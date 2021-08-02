@@ -16,11 +16,11 @@ export const request = ({url,data={},method='get'}) => {
             success(res){
                 resolve(res.data);
                 wx.hideLoading()
-                },
-                fail(err){
-                    reject(err);
-                    wx.hideLoading()
-                }
-            })
+            },
+            fail(err){
+                reject(err);
+                wx.hideLoading()
+            }
         })
+    })
 }

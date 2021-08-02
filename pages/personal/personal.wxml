@@ -35,14 +35,17 @@
                 <text>我的好友</text>
             </view>
         </view>
-
-        <view class="favor">
-            <image src="{{favorInfo.coverImgUrl}}" mode="widthFix"/>
-            <view class="favorMessage">
-                <view>我喜欢的音乐</view>
-                <view>{{favorInfo.trackCount}}首</view>
+        <block wx:if="{{favorInfo.coverImgUrl}}">
+            <view class="favor">
+                <image src="{{favorInfo.coverImgUrl}}" mode="widthFix"/>
+                <view class="favorMessage">
+                    <view>我喜欢的音乐</view>
+                    <view wx:if="{{favorInfo.trackCount}}">{{favorInfo.trackCount}}首</view>
+                </view>
             </view>
-        </view>
+        </block>
+          
+        
 
     </view>
 
@@ -62,15 +65,21 @@
                 <text>创建歌单({{createdPlayList.length}}个)</text>
                 <text class="nanaFont nana-tianjia"></text><text class="nanaFont nana-gengduo"></text>
             </view>
-
-            <view class="playlistItem" wx:for="{{createdPlayList}}" data-id="{{item.id}}" wx:key="id">
-                <image src="{{item.coverImgUrl}}" mode="widthFix"/>
-                <view class="playlistInfo">
-                    <view class="playlistName hiddenFlow">{{item.name}}</view>
-                    <view class="trackCount">{{item.trackCount}}首</view>
+            <block wx:if="{{createdPlayList.length}}">
+                <view class="playlistItem" wx:for="{{createdPlayList}}" data-id="{{item.id}}" wx:key="id">
+                    <image src="{{item.coverImgUrl}}" mode="widthFix"/>
+                    <view class="playlistInfo">
+                        <view class="playlistName hiddenFlow">{{item.name}}</view>
+                        <view class="trackCount">{{item.trackCount}}首</view>
+                    </view>
+                    <view class="nanaFont nana-gengduo"></view>
                 </view>
-                <view class="nanaFont nana-gengduo"></view>
-            </view>
+            </block>
+            <block wx:else>
+                <view class="tip">请登录享受更好体验</view>
+            </block>
+              
+              
                 
 
         </view>
@@ -80,15 +89,22 @@
                 <text>收藏歌单({{starPlayList.length}}个)</text>
                 <text class="nanaFont nana-gengduo"></text>
             </view>
-
-            <view class="playlistItem" wx:for="{{starPlayList}}" data-id="{{item.id}}" wx:key="id">
-                <image src="{{item.coverImgUrl}}" mode="widthFix"/>
-                <view class="playlistInfo">
-                    <view class="playlistName hiddenFlow">{{item.name}}</view>
-                    <view class="trackCount">{{item.trackCount}}首</view>
+            <block wx:if="{{starPlayList.length}}">
+                <view class="playlistItem" wx:for="{{starPlayList}}" data-id="{{item.id}}" wx:key="id">
+                    <image src="{{item.coverImgUrl}}" mode="widthFix"/>
+                    <view class="playlistInfo">
+                        <view class="playlistName hiddenFlow">{{item.name}}</view>
+                        <view class="trackCount">{{item.trackCount}}首</view>
+                    </view>
+                    <view class="nanaFont nana-gengduo"></view>
                 </view>
-                <view class="nanaFont nana-gengduo"></view>
-            </view>
+            </block>
+            <block wx:else>
+                <view class="tip">请登录享受更好体验</view>
+            </block>
+              
+              
+            
         </view>
     </view>
 </view>

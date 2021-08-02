@@ -2,7 +2,7 @@
 App({
   data:{
     globalData:{
-      navHeight:0
+      playingList:[]
     }
   },
   onLaunch() {

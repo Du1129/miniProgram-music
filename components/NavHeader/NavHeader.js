@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title:''
+    title:{
+      value:'',
+      type:String
+      }
 
   },
   //启用插槽多选

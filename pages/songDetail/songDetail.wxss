@@ -6,7 +6,7 @@
     left:0;
     right:0;
     display: flex;
-    z-index:3;
+    z-index:101;
     /* background-color:yellow; */
 }
 .navBar .navLeft,.navBar .navRight{
@@ -44,17 +44,12 @@
 }
 .songDetailContainer{
     height:100vh;
-    color:white;
-    /* background:rgba(0,0,0,0.5); */
-    display:flex;
-    flex-direction:column;
-    align-items:center;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .bgImg{
     position: absolute;
-    height: 100%;
+    height: 120%;
     width: 100%;
     top: 0;
     z-index: -1;
@@ -62,35 +57,41 @@
     filter: blur(15px);
     transform: scale(1.2);
 }
-.bgImg image{
+/* .bgImg image{
     width: 100%;
     height: 120%;
-}
+} */
 
 
 .scrollContent{
-    height:calc(100vh - 66px)
+    height:calc(100vh - 66px);
+    color:white;
+    /* background:rgba(0,0,0,0.5); */
+    /* display:flex;
+    flex-direction:column;
+    align-items:center; */
+    position:relative;
 }
 /*摇杆*/
 .circle{
     position:relative;
+    margin:0 auto;
     z-index:100;
     width:60rpx;
     height:60rpx;
     border-radius:50%;
     background:#fff;
-    margin:10rpx 0;
 }
 .needle{
-    position:relative;
-    z-index:99;
-    top:-40rpx;
-    left:60rpx;
-    width:192rpx;
-    height:274rpx;
-    transform-origin:40rpx 0;
-    transform:rotate(-20deg);
-    transition:transform 1s;
+    position: relative;
+    z-index: 99;
+    left: 336rpx;
+    top: -24rpx;
+    width: 192rpx;
+    height: 274rpx;
+    transform-origin: 40rpx 0;
+    transform: rotate(-20deg);
+    transition: transform 1s;
 }
 .needleActive{
     transform:rotate(0deg);
@@ -99,11 +100,13 @@
 .discContainer{
     position:relative;
     top:-170rpx;
+    margin:0 auto;
+    z-index:98;
     width:598rpx;
     height:598rpx;
 }
 .discAnimation{
-    animation:disc 5s linear infinite;
+    animation:disc 6s linear infinite;
     animation-delay:1s;
 }
 @keyframes disc{
@@ -134,4 +137,30 @@
     width:370rpx;
     height:370rpx;
     border-radius:50%
+}
+/*进度条*/
+.progress-box{
+    display:flex;
+    align-items:center;
+}
+.progress-box view{
+    width:90rpx;
+    margin:0 20rpx;
+}
+.progress-box progress{
+    flex:1;
+}
+
+.controlBar{
+    margin-top:30rpx;
+    display:flex;
+    align-items: center;
+}
+.controlBar view{
+    width:20%;
+    font-size:70rpx;
+    text-align: center;
+}
+.controlBar .nana-kaishi,.controlBar .nana-zanting{
+    font-size:80rpx;
 }

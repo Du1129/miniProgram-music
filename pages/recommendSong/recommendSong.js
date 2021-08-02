@@ -1,5 +1,6 @@
 // pages/recommendSong/recommendSong.js
 import {reqEverydayRecommand} from "../../api/index"
+const app = getApp();
 Page({
 
   /**
@@ -27,18 +28,26 @@ Page({
   onLoad: function (options) {
     this.getRecommendSong();
     let current = new Date();
-    this.setData({currentDate:current.getDate()})
-    this.setData({currentMonth:current.getMonth()+1})
+    this.setData({
+      currentDate:current.getDate(),
+      currentMonth:current.getMonth()+1
+    })
     // console.log(this.data.currentTime)
   },
   toSongDetail(event){
-    let {id} = event.currentTarget.dataset;
+    let {id,index} = event.currentTarget.dataset;
     // this.setData({
       
     // });
     wx.navigateTo({
-      url:'/pages/songDetail/songDetail?musicId='+ id
+      url:'/pages/songDetail/songDetail?musicId='+ id +'&index='+index
     })
+  },
+  bubbleTap(){
+    app.globalData = {
+      ...app.globalData,
+      playingList:this.data.recommendSongInfo.dailySongs
+    }
   },
 
   /**
